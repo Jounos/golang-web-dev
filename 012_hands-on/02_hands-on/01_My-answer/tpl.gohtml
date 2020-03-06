@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hotels of the region</title>
+    </head>
+    <body>
+        {{range .}}
+            <h1>{{.Name}}</h1>
+            <h2>{{.Address}}</h2>
+            <h3>{{.City}}</h3>
+            <h3>{{.Zip}}</h3>
+            {{if .Region.Sothenrn}}
+                <h3>Região Sul</h3>
+            {{else if .Region.Central}}
+                <h3>Região Central</h3>
+            {{else if .Region.Northern}}
+                <h3>Região Norte</h3>
+            {{else}}
+                <h3>Não há região</h3>
+            {{end}}
+        {{end}}
+    </body>
+</html>
